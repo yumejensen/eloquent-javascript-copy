@@ -26,10 +26,17 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(num) {
+  //the num determines the size of the triangle
+  // for loop that starts at 1, stops at num
+  for (let count = 1; count <= num; count++){
+    let mySymbol = '#';
+    // repeat method returns new string with specified number of copies
+    console.log(mySymbol.repeat(count));
+  }
 }
 
+console.log(triangles(5));
 
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////

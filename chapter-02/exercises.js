@@ -36,7 +36,6 @@ function triangles(num) {
   }
 }
 
-console.log(triangles(5));
 
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
@@ -55,7 +54,17 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  // for loop that goes from start to end
+  for (let count = start; count <= end; count++)
+    if (count % 3 === 0 && count % 5 === 0){
+      console.log("fizzbuzz");
+    } else if (count % 3 === 0){
+      console.log("fizz");
+    } else if (count % 5 === 0){
+      console.log("buzz");
+    } else {
+      console.log(count);
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

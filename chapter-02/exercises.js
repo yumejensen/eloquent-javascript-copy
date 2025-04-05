@@ -98,9 +98,28 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
-
+  // start with empty string for board
+  let chessboard = "";
+  // for loop for the lines
+  for (let i = 1; i <= x; i++){
+    // variables for space and #
+    let space = " ";
+    let square = "#";
+    // space will be odd and square will be even
+    if (i % 2 !== 0){
+      chessboard += space;
+    } else {
+      chessboard += square;
+    }
+  }
+  return chessboard;
 }
+
+console.log(drawChessboard(8));
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

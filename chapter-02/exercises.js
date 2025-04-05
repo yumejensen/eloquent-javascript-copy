@@ -100,7 +100,6 @@ LOGS =>
 function drawChessboard(x) {
   // start with empty string for board
   let chessboard = "";
-  // for loop for the lines
   for (let i = 1; i <= x; i++){
     // variables for space and #
     let space = " ";
@@ -111,7 +110,17 @@ function drawChessboard(x) {
     } else {
       chessboard += square;
     }
+    // for loop for new lines??
+    for (let j = 1; j <= x; j++){
+      if (j === x){
+        chessboard + "\n"
+        
+      }
+    }
   }
+
+
+
   return chessboard;
 }
 

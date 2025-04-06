@@ -114,13 +114,10 @@ function drawChessboard(x) {
     for (let j = 1; j <= x; j++){
       if (j === x){
         chessboard + "\n"
-        
+
       }
     }
   }
-
-
-
   return chessboard;
 }
 

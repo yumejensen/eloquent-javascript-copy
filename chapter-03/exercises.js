@@ -14,20 +14,21 @@ function min(num1, num2) {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven(num) {
-  //base
-  // subtracting by two, if you hit one it's odd and 0 if even
-  if (n === 1){
+function isEven(n) {
+  // base - if subtracting by 2 ends in 1, it's odd
+  // base - if subtracting by 2 ends with 0, it's even
+  if (n === 1) {
     return false;
   } else if (n === 0){
     return true;
   }
-  //recursion
-  // count up to 0/1 if neg, count down if pos
-  if (num > 0){
-    return isEven(num-2);
-  } else if (num < 0){
-    return isEven(num+2);
+  // recursiom
+  // minus 2 until 1 or 0 OR
+  // add 2 until 1 or 0
+  if (n < 0){
+    return isEven(n+2);
+  } else if (n > 0){
+    return isEven(n-2);
   }
 };
 

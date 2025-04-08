@@ -37,10 +37,13 @@ function isEven(n) {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+// takes in a string + character
+// default param is 0 for counter
 function countChars(string, char, count=0) {
   //for loop to go over string
   for (let i = 0; i < string.length; i++){
     if (char === string[i]){
+      // when a character is found, add to the count
       count += 1;
     }
   }
@@ -51,8 +54,16 @@ function countChars(string, char, count=0) {
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+//similar process - takes in string and has default param 0 for counter
+function countBs(string, count=0) {
+  // for loop to search string
+  for (let i = 0; i < string.length; i++){
+    if (string[i] === 'B'){
+      // if something is 'B' add to count
+      count += 1;
+    }
+  }
+  return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

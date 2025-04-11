@@ -100,28 +100,36 @@ LOGS =>
 function drawChessboard(x) {
   // start with empty string for board
   let chessboard = "";
-  for (let i = 1; i <= x; i++){
-    // variables for space and #
-    let space = " ";
-    let square = "#";
-    // space will be odd and square will be even
-    if (i % 2 !== 0){
-      chessboard += space;
+  // outer for loop start at 0
+  for (let i = 0; i < x; i++){ 
+    let row = "";
+    //IF OUTER LOOP EVEN
+    if (i % 2 === 0){
+      for (let j = 0; j < x; j++){
+        if (j % 2 === 0){
+          row += " ";
+        } else {
+          row += "#";
+        }
+      };
+      // row = " # #"
+      chessboard += row + "\n";
+      
+    // IF OUTER LOOP IS ODD
     } else {
-      chessboard += square;
-    }
-    // for loop for new lines??
-    for (let j = 1; j <= x; j++){
-      if (j === x){
-        chessboard + "\n"
-
+      for (let k = 0; k < x; k++){
+        if (k % 2 === 0){
+          row += "#";
+        } else {
+          row += " ";
+        }
       }
+      chessboard += row + "\n";
     }
   }
-  return chessboard;
-}
+  console.log(chessboard);
+};
 
-console.log(drawChessboard(8));
 
 
 

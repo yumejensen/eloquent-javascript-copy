@@ -84,9 +84,18 @@ function reverseArrayInPlace(array) {
 // video available
 // a list is an object structured as a series of nodes (nested objects)
 
-function arrayToList() {
+function arrayToList(array) {
+  //create function scoped variable null
+  let rest = null;
+  // iterate backwards
+  for (let i = array.length - 1; i >= 0; i--){
+    // reassign rest to value: thing in array and then rest is a nest
+    rest = {value: array [i], rest: rest};
+  }
+  // return rest - reassigned
+  return rest;
+};
 
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////

@@ -12,33 +12,29 @@ function range(start, end, step) {
   // if start = end, return empty array
   if (start === end){
     return output;
-  }
+  };
   // if step is negative, return empty array
   if (step < 0){
     return output;
-  }
+  };
+  // if step is undefined, step = 1
+  if (step === undefined){
+    step = 1;
+  };
   // if positive direction
   if (start < end){
     // for loop incrementing
     for (let i = start; i <= end; i += step){
-      // if step undefined
-      if (step === undefined){
-        step = 1;
-      }
       output.push(i);
     }
-  } 
+  }; 
   //  if negative direction
   if (start > end){
     // for loop for decrementing
     for (let i = start; i >= end; i -= step){
-      // if step undefined
-      if (step === undefined){
-        step = 1;
-      }
       output.push(i);
     }
-  }
+  };
   return output;
 };
 

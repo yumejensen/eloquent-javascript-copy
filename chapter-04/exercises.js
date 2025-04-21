@@ -9,6 +9,14 @@ E: If there is no increase/ decreaser go by 1
 */
 function range(start, end, step) {
   let output = [];
+  // if start = end, return empty array
+  if (start === end){
+    return output;
+  }
+  // if step is negative, return empty array
+  if (step < 0){
+    return output;
+  }
   // if positive direction
   if (start < end){
     // for loop incrementing
@@ -30,10 +38,6 @@ function range(start, end, step) {
       }
       output.push(i);
     }
-  }
-  // if start = end
-  if (start === end){
-    return [];
   }
   return output;
 };

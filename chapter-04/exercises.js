@@ -71,11 +71,19 @@ function reverseArray(array, output = []) {
 I: An array
 O: The original array - reversed
 */
-function reverseArrayInPlace(array) {
-  // array sort method: b - a to go in descending order
-  return array.sort((a, b) => b - a);
+function reverseArrayInPlace(array){
+  // output array - backwards elements
+  let reverseCopy = [];
+  for (let i = array.length - 1; i >= 0; i--){
+    reverseCopy.push(array[i]);
+  }
+  // reassign original array to new array
+  for (let i = 0; i < array.length; i++){
+    array[i] = reverseCopy[i];
+  }
+  return array;
 };
-// NOT WORKING YET
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////

@@ -8,11 +8,32 @@ C: N/A
 E: If there is no increase/ decreaser go by 1
 */
 function range(start, end, step) {
-  // output array
   let output = [];
-  // for loop to go from start to end
-  for (let i = start; i <= end; i+=step){
-    output.push(i);
+  // if positive direction
+  if (start < end){
+    // for loop incrementing
+    for (let i = start; i <= end; i += step){
+      // if step undefined
+      if (step === undefined){
+        step = 1;
+      }
+      output.push(i);
+    }
+  } 
+  //  if negative direction
+  if (start > end){
+    // for loop for decrementing
+    for (let i = start; i >= end; i -= step){
+      // if step undefined
+      if (step === undefined){
+        step = 1;
+      }
+      output.push(i);
+    }
+  }
+  // if start = end
+  if (start === end){
+    return [];
   }
   return output;
 };

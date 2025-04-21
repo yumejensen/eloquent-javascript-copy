@@ -7,14 +7,9 @@ O: The range as an array
 C: N/A
 E: If there is no increase/ decreaser go by 1
 */
-function range(start, end, step) {
-  let output = [];
-  // if start = end, return empty array
-  if (start === end){
-    return output;
-  };
-  // if step is negative, return empty array
-  if (step < 0){
+function range(start, end, step, output = []) {
+  // if start = end or step is negative, return empty array
+  if (start === end || step < 0){
     return output;
   };
   // if step is undefined, step = 1
@@ -37,6 +32,7 @@ function range(start, end, step) {
   };
   return output;
 };
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////

@@ -75,7 +75,7 @@ function reverseArrayInPlace(array) {
   // array sort method: b - a to go in descending order
   return array.sort((a, b) => b - a);
 };
-
+// NOT WORKING YET
 
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
@@ -102,10 +102,24 @@ function arrayToList(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 // video available
+/*
+I: A list (object)
+O: An array of the values
+*/
+// start at outer and end at inner
+function listToArray(list, array = []) {
+  // base - once we hit innermost
+  if (list.rest === null){
+    // last value
+    array.push(list.value);
+    return array;
+  }
+  // recursion - add values to array
+  array.push(list.value);
+  // return rest - get rid of first onion layer
+  return listToArray(list.rest, array);
+};
 
-function listToArray() {
-
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////

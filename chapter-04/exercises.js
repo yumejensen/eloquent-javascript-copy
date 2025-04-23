@@ -157,26 +157,56 @@ I: A list and a number
 O: The element that exists at that number (indexed at 0)
 */
 function nth(list, number) {
-  // can i just use the list to array function here?
+  // use list to array function to make into array
   let listArr = listToArray(list);
-  // return index <number> if it exists in array
+  // if number exists in array, return array at index number
   if (number >= 0 && number <= listArr.length - 1){
     return listArr[number];
-    // else it does not exist
+    // else it does not exist - return undefined
   } else {
     return undefined;
   }
 };
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+/*
+I: Two pieces of data, including objects 
+O: True if every property or thing is the same, false otherwise
+*/
+function deepEqual(x, y) {
+  // determine if x and y are not objects - if not they are simple data
+  // if simple, can use strictly equals as normal
+  if (typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
+  }
+  // determine if one is a complex data type
+  // if one is and the other is not, will be false right away
+  if (typeof x !== 'object' || typeof y !== 'object'){
+    return false;
+  }
+  // now we are comparing two objects - create both array of keys
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
+  // another simple elimination is length
+  if (xKeys.length !== yKeys.length){
+    return false;
+  }
+  // for loop over xKeys
+  for (let i = 0; i < xKeys.length; i++){
+    // compare xKeys to yKeys
+    // if current key is NOT included in yKeys
+    // now is the VALUE at each equal? use recursion
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[yKeys[i]])){
+      return false;
+    }
+  }
+  // if everything has survived and not been false, it's true
+  return true;
+};
 
-// video available
-
-function deepEqual() {
-
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

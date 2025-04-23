@@ -135,17 +135,20 @@ function listToArray(list, array = []) {
 /*
 I: An element and a list (element = value: __)
 O: A new list, adds the element to the front of the input list
-
+   basically add the outermost layer 
 */
 function prepend(list, element) {
   // add value: element and then enclose rest of list inside an object??
   // holder object
-  addedList = {};
-  // put element inside
-  addedList.value = element;
-  // put rest inside
-  addedList.rest = list;
-  return addedList;
+  // addedList = {};
+  // // put element inside
+  // addedList.value = element;
+  // // put rest inside
+  // addedList.rest = list;
+  // return addedList;
+  list.value = element;
+  list.rest = list;
+  return list;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

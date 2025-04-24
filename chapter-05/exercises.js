@@ -22,7 +22,7 @@ I: A value, a function, an update function, and a body function
 O: Make a loop and iterate through
 */
 function loop(start, condition, update, action) {
-  // start value, range, incrementer
+  // for loop w/ start value, range, incrementer
   for (let i = start; condition(i); update(i)){
     // body function
     action(i);

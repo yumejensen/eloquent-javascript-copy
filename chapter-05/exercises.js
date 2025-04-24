@@ -19,12 +19,12 @@ function flatten(nestedArr) {
 // /////////////////////////////////////////////////////////////////////////////
 /*
 I: A value, a function, an update function, and a body function
-O: Result of iterating - kind of like map
+O: Make a loop and iterate through
 */
-
-function loop(value, func, updateFunc, bodyFunc) {
-  // for loop 
-
+function loop(start, condition, update, action) {
+  for (let value = start; condition(value); update(value)){
+    action(value);
+  }
 };
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -53,8 +53,9 @@ function every(array, test) {
 I: A string
 O: "ltr" if string direction is left to right
    "rtl" is string direction is right to left
+   "ttb" if string is top to bottom
 */
-function dominantDirection() {
+function dominantDirection(string) {
 
 };
 

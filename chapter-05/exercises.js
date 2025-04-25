@@ -54,13 +54,37 @@ function every(array, test) {
 /*
 I: A string
 O: "ltr" if string direction is left to right
-   "rtl" is string direction is right to left
-   "ttb" if string is top to bottom
+   "rtl" if string direction is right to left
 */
 function dominantDirection(string) {
-
+  // create a variable ltr and init as empty array
+  let ltr = [];
+  // create variable rtl and init as empty array
+  let rtl = [];
+  
+  // iterate through string
+  for (let i = 0; i < string.length; i++){
+    // character script helper function - 
+    // takes in char code, if it falls in a certain range, return script object from scripts.js
+    let script = characterScript(string.charCodeAt(i));
+    // determine if it exists
+    if (script !== null){
+      // push into ltr and rtl arrays
+      if (script.direction === "ltr"){
+        ltr.push(script);
+      } else {
+        rtl.push(script);
+      }
+    }
+  };
+  
+  // whichever array is longer is dominant direction
+  if (ltr.length > rtl.length){
+    return "ltr";
+  } else {
+    return "rtl";
+  }
 };
-
 
 // /////////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////
